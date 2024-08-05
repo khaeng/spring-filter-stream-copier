@@ -45,7 +45,8 @@ java -jar spring-filter-stream-copier.jar
 
 ### Testing with Postman   
 
-- import postman project: **/test/postman/spring-filter-stream-copier.postman_collection.json**   
+- import postman project: [Postman-Project-json-file][POSTMAN_PROJECT_LINK]   
 
 - Test your requests   
 
+[POSTMAN_PROJECT_LINK]: https://github.com/khaeng/spring-filter-stream-copier/blob/main/test/postman/spring-filter-stream-copier.postman_collection.json "/test/postman/spring-filter-stream-copier.postman_collection.json"
