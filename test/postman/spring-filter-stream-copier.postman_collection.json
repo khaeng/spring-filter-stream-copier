@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "4b1e1486-4802-45ab-ba3a-90203a269fbd",
+		"name": "spring-filter-stream-copier",
+		"description": "spring-filter-stream-copier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test/both",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "전송테스트 데이터 바디 요청전문..."
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/bothkey1111--firstKeyData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"bothkey1111--firstKeyData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "전송테스트 데이터 바디 요청전문..."
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/all/bothkey1111--firstKeyData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"all",
+						"bothkey1111--firstKeyData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/ask for request logger filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"msg\": \"이전문은 요청전문임\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/ask/bothkey1111--firstKeyData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"ask",
+						"bothkey1111--firstKeyData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/answer for response logger filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"msg\": \"이전문은 요청전문임\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/answer/bothkey1111--firstKeyData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"answer",
+						"bothkey1111--firstKeyData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/nofilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "전송테스트 데이터 바디 요청전문..."
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/nofilter/bothkey1111--firstKeyData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"nofilter",
+						"bothkey1111--firstKeyData"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
