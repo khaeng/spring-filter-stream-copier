@@ -5,6 +5,7 @@ package com.itcall.web.config.filter;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 
 import org.springframework.http.MediaType;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -47,13 +48,12 @@ public class LoggerRequestFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-		MediaType mediaType = MediaType.valueOf(request.getContentType());
-		log.info("Requested MediaType: {}", mediaType.getType()); // This is MainType!!!
 		
 		/*** Body가 없거나 + Chunked 이거나 + Integer.MAX_VALUE(2,147,483,647) 보다 크면 처리하지 않는다.
 		 * AND: Request의 ContentType의 Main 타입 중 Filter처리 가능 타입만 대상으로 한다. ***/
 		if(request.getContentLength() > 0
-				&& FILTERED_MEDIA_MAIN_TYPE.contains(mediaType.getType())
+				&& Objects.nonNull(request.getContentType())
+				&& FILTERED_MEDIA_MAIN_TYPE.contains(MediaType.valueOf(request.getContentType()).getType())
 				
 //				mediaType.getType().equals("text")
 //				|| mediaType.getType().equals("application")
@@ -64,6 +64,9 @@ public class LoggerRequestFilter extends OncePerRequestFilter {
 //				FILTERED_MEDIA_TYPE.stream().filter(m -> m.isCompatibleWith(mediaType)).findAny().isPresent()
 				
 				) {
+			
+			log.info("Requested MediaTypes: {}", request.getContentType()); // This is MainType/SubType/... !!!
+			
 			if(MATCHER_BOTH.matches(request)) {
 			// if(requestUri.matches("--- Request uri Patterns regular expression 요청/응답 모두 먼저읽고 변경하기 ---")) {
 				
